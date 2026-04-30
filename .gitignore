@@ -5,6 +5,7 @@ actions-runner/
 target/
 !.mvn/wrapper/maven-wrapper.jar
 *.DS_Store
+.env
 
 
 ### STS ###

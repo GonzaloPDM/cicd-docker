@@ -127,11 +127,11 @@ kubectl create namespace ips
 If your Docker images are private, create a registry secret. Replace `DOCKER_HUB_USER_NAME`, `DOCKER_HUB_USER_TOKEN`, and your email:
 
 ```
-kubectl create secret docker-registry mi-registro-secreto \
-  --docker-server=https://index.docker.io/v1/ \
-  --docker-username=DOCKER_HUB_USER_NAME \
-  --docker-password=DOCKER_HUB_USER_TOKEN \
-  --docker-email=tu-email@ejemplo.com \
+kubectl create secret docker-registry mi-registro-secreto `
+  --docker-server=https://index.docker.io/v1/ `
+  --docker-username=DOCKER_HUB_USER_NAME `
+  --docker-password=DOCKER_HUB_USER_TOKEN `
+  --docker-email=tu-email@ejemplo.com `
 ```
 
 
