@@ -111,7 +111,6 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           platforms: linux/amd64,linux/arm64
-          retrying-max-attempts: 3
 ```
 
 ### Deploying the Application to Kubernetes

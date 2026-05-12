@@ -12,10 +12,10 @@ public class Libro {
 	private String nombre;
 	private Double precio;
 
-	@OneToOne
+	@ManyToOne
 	private Persona autor;
 
-	@OneToOne
+	@ManyToOne
 	private Persona editor;
 
 	public Libro() {
