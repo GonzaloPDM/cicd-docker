@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import io.micrometer.core.annotation.Timed;
+import io.micrometer.core.instrument.MeterRegistry;
+
 import com.example.demo.model.Persona;
 import com.example.demo.model.PersonaService;
 
@@ -21,9 +24,14 @@ public class PersonaController {
 	@Autowired
 	PersonaService personaService;
 
+	@Autowired
+	MeterRegistry meterRegistry;
+
 	/*---Devuelve el template de personas---*/
+	@Timed(value = "personas.list", description = "Time taken to list all personas")
 	@GetMapping("/personas")
 	public String listPersonView(Model model) {
+		meterRegistry.counter("personas.list.requests", "endpoint", "/personas").increment();
 		model.addAttribute("personas", personaService.getAll());
 		// devuelvo el template personas
 		return "personas";
